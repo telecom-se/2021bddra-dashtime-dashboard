@@ -1,12 +1,11 @@
 <template>
-  <v-container>
-    <v-card-title class='px-0' v-text='title'></v-card-title>
-    <v-card>
-      <v-card-text>
-        <ApexChart  :series='series' :options='chartOptions'></ApexChart>
-      </v-card-text>
-    </v-card>
-  </v-container>
+  <v-row>
+    <v-col>
+      <v-card class="pa-3">
+        <ApexChart :series="series" :options="chartOptions" height="300"></ApexChart>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -15,16 +14,16 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     seriesTitle: {
       type: String,
-      default: ''
+      default: '',
     },
     series: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -32,15 +31,14 @@ export default {
         chart: {
           type: 'area',
           stacked: false,
-          height: 500,
           zoom: {
             type: 'x',
             enabled: true,
-            autoScaleYaxis: true
+            autoScaleYaxis: true,
           },
           toolbar: {
-            autoSelected: 'zoom'
-          }
+            autoSelected: 'zoom',
+          },
         },
         stroke: {
           show: true,
@@ -48,14 +46,14 @@ export default {
           width: 2,
         },
         dataLabels: {
-          enabled: false
+          enabled: false,
         },
         markers: {
-          size: 0
+          size: 0,
         },
         title: {
           text: this.seriesTitle,
-          align: 'left'
+          align: 'left',
         },
         fill: {
           type: 'gradient',
@@ -64,36 +62,34 @@ export default {
             inverseColors: false,
             opacityFrom: 0.5,
             opacityTo: 0,
-            stops: [0, 90, 100]
-          }
+            stops: [0, 90, 100],
+          },
         },
         yaxis: {
           labels: {
             formatter(val) {
               return (val / 1000000).toFixed(0)
-            }
+            },
           },
           title: {
-            text: 'Price'
-          }
+            text: 'Price',
+          },
         },
         xaxis: {
-          type: 'datetime'
+          type: 'datetime',
         },
         tooltip: {
           shared: false,
           y: {
             formatter(val) {
               return (val / 1000000).toFixed(0)
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     }
-  }
+  },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

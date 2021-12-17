@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-navigation-drawer v-model="drawer" fixed app color="#1e293b">
+      <div class="py-4 px-4">
+        <v-img src="/dashtime_logo.png" contain></v-img>
+      </div>
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>

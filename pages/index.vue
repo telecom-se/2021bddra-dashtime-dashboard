@@ -4,6 +4,10 @@
 
     <ListSensors></ListSensors>
 
+    <Spacer></Spacer>
+
+    <Title>Time series</Title>
+
     <v-row>
       <v-col>
         <client-only>

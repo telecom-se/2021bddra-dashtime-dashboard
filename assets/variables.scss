@@ -1,28 +1,14 @@
-.v-alert,
-.v-dialog,
-.v-data-table,
-.v-btn,
-.v-picker,
-.v-text-field,
-.v-tooltip {
-  border-radius: 12px !important;
-}
-.v-btn--fab,
-.v-btn--icon {
-  border-radius: 50% !important;
-}
-.v-btn--rounded {
-  border-radius: 28px !important;
-}
-.v-subheader {
-  height: 36px !important;
-}
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$body-font-family: 'Sora', 'Heveltica', 'Roboto', 'sans-serif';
+$heading-font-family: 'Sora', 'Heveltica', 'Roboto', 'sans-serif';
+
+$card-border-radius: 16px;
+$sheet-border-radius: 16px;
+$dialog-border-radius: 16px;
+$alert-border-radius: 8px;
+$btn-border-radius: 8px;
 $btn-text-transform: none;
-
-$card-border-radius: 20px;
-$card-title-word-break: normal;
-$card-title-line-height: 1.7rem;
-
-$navigation-drawer-border-width: 0px;
-
-@import '~vuetify/src/styles/styles.sass';

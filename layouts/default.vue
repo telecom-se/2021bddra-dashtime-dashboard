@@ -1,27 +1,57 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" fixed app color="#1e293b">
-      <div class="py-4 px-4">
-        <v-img src="/dashtime_logo.png" contain></v-img>
-      </div>
-      <v-list>
-        <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar app color="#1e293b" flat dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-container v-if="$vuetify.breakpoint.smAndUp" class="py-0 fill-height">
-        <span class="font-weight-bold text-h6">Dashtime</span>
+
+    <v-app-bar app color="#000130" flat>
+      <v-container class="py-0 fill-height">
+        <nuxt-link to="/" style="text-decoration: none; color: inherit">
+          <div class="d-flex align-end">
+            <v-img
+              src="/dashtime-logo.png"
+              :width="$vuetify.breakpoint.smAndDown ? 40 : 40"
+              contain
+            />
+            <span class="ml-3 text-h6 font-weight-bold white--text">Dashtime</span>
+          </div>
+        </nuxt-link>
 
         <v-spacer></v-spacer>
-        <v-avatar class="mr-5" color="white" size="32"></v-avatar>
+
+        <v-menu offset-y>
+          <template #activator="{ on, attrs }">
+            <v-avatar
+              color="shade"
+              size="32"
+              class="ml-4 my-1"
+              v-bind="attrs"
+              v-on="on"
+            >
+<!--              <span class="white&#45;&#45;text text-body-2">{{}}</span>-->
+            </v-avatar>
+          </template>
+          <v-card width="180">
+            <v-card-title class="pa-0 shade">
+              <v-avatar
+                color="#000130"
+                size="40"
+                class="mt-3 mx-auto mb-n5"
+                style="border: solid 2px white"
+              >
+<!--                <span class="white&#45;&#45;text text-body-2">{{}}</span>-->
+              </v-avatar>
+            </v-card-title>
+            <div class="mt-6 px-3 pb-3 text-center d-flex flex-column">
+              <span class="text-caption font-weight-medium">
+                Dashtime
+              </span>
+              <span class="text--secondary" style="font-size: 10px">
+                © All right reserved
+              </span>
+            </div>
+<!--            <v-card-actions class="d-flex justify-center">-->
+<!--              <v-btn x-small text color="error" @click="logout">Logout</v-btn>-->
+<!--            </v-card-actions>-->
+          </v-card>
+        </v-menu>
       </v-container>
     </v-app-bar>
 

@@ -4,21 +4,6 @@
 
     <ListCompanies :companies="companies"></ListCompanies>
 
-    <Spacer></Spacer>
-
-    <Title>Time series</Title>
-
-    <v-row>
-      <v-col>
-        <client-only>
-          <time-series-chart
-            :series="series"
-            title="Time Series"
-            series-title="wip"
-          ></time-series-chart>
-        </client-only>
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 

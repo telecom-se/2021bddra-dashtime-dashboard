@@ -13,5 +13,3 @@
 ![API company stocks](screenshots/api-company-stocks.png)
 
 ![API company stocks filtered](screenshots/api-company-stocks-filtered.png)
-
-![API company stocks filtered](screenshots/api-company-stocks-filtered.png)

@@ -3,8 +3,8 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - 2021bddra-equipe1-dashboard',
-    title: '2021bddra-equipe1-dashboard',
+    titleTemplate: 'Dashtime',
+    title: 'Dashtime',
     htmlAttrs: {
       lang: 'en',
     },
@@ -35,6 +35,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/router',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
@@ -48,6 +49,8 @@ export default {
     '@nuxtjs/axios',
   ],
 
+  router: {},
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     proxy: true, // proxy only for API
@@ -55,8 +58,8 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: `http://localhost:3333`,
-      pathRewrite: { '^/api/': '' },
+      target: `http://localhost:8080`,
+      pathRewrite: { '^/api/': '/api/'  },
       changeOrigin: true,
     },
   },
@@ -76,7 +79,7 @@ export default {
       dark: false,
       themes: {
         light: {
-          primary: '#3b82f6',
+          primary: '#000130',
           secondary: '#ec4899',
           info: '#facc15',
           warning: '#f97316',
@@ -91,8 +94,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  server: {
-    port: 3030,
-  }
 
 }

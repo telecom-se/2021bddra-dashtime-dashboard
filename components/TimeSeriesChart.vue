@@ -68,7 +68,7 @@ export default {
         yaxis: {
           labels: {
             formatter(val) {
-              return (val / 1000000).toFixed(0)
+              return val.toFixed(0)
             },
           },
           title: {
@@ -82,7 +82,7 @@ export default {
           shared: false,
           y: {
             formatter(val) {
-              return (val / 1000000).toFixed(0)
+              return val.toFixed(2);
             },
           },
         },

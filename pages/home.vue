@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <Title>Your sensors</Title>
+    <Title>Markets</Title>
 
-    <ListSensors></ListSensors>
+    <ListCompanies :companies="companies"></ListCompanies>
 
     <Spacer></Spacer>
 
@@ -26,8 +26,17 @@
 import { DateTime } from 'luxon'
 
 export default {
+  async asyncData({ $axios, error }) {
+    try {
+      const companies = await $axios.get(`/api/companies`)
+      return { companies: companies.data }
+    } catch (e) {
+      return error({ statusCode: 500, message: 'Internal server error' })
+    }
+  },
   data() {
     return {
+      companies: [],
       series: this.generateSeries(),
     }
   },
